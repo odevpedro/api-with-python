@@ -1,13 +1,12 @@
 import requests
+from config import BASE_URL, TIMEOUT
 from utils import handle_api_error
 
 class RickAndMortyClient:
-    BASE_URL = "https://rickandmortyapi.com/api/"
-
-    def fetch(self, endpoint: str) -> dict | None:
-        url = f"{self.BASE_URL}{endpoint}"
+    def fetch(self, endpoint: str, params: dict = None) -> dict | None:
+        url = f"{BASE_URL}{endpoint}"
         try:
-            response = requests.get(url, timeout=5)
+            response = requests.get(url, params=params, timeout=TIMEOUT)
             response.raise_for_status()
             return response.json()
         except (requests.RequestException, ValueError) as error:

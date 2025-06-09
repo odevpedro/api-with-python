@@ -1,3 +1,4 @@
+from models import Character
 # utils.py
 
 def handle_api_error(error: Exception):
@@ -15,3 +16,11 @@ def format_character(character: dict) -> str:
     status = character.get("status", "???")
     species = character.get("species", "???")
     return f"{name} | {status} | {species}"
+
+
+def character_from_dict(data: dict) -> Character:
+    return Character(
+        name=data.get("name", "???"),
+        status=data.get("status", "???"),
+        species=data.get("species", "???")
+    )
