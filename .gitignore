@@ -1,0 +1,28 @@
+# Diretórios de IDEs
+.idea/
+.vscode/
+
+# Ambiente virtual
+.venv/
+env/
+venv/
+
+# Arquivos compilados do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+
+# Dados de testes e caches
+.cache/
+.tox/
+coverage/
+dist/
+build/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
